@@ -1,6 +1,6 @@
 {
   "name": "No More Referrer",
-  "shortname": "nomorereferrer",
+  "short_name": "nomorereferrer",
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "Delete referrer",
@@ -10,14 +10,12 @@
     "activeTab", "storage"
   ],
 
-  "options_page": "options.html",
-
   "content_scripts": [
     {
       "all_frames": true,
-      "matches": ["<all_urls"],
+      "matches": ["<all_urls>"],
       "js": [
-        "inject.js"
+        "src/inject.js"
       ]
     }
   ]
