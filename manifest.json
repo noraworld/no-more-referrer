@@ -7,8 +7,14 @@
   "homepage_url": "https://github.com/noraworld/no-more-referrer",
 
   "permissions": [
-    "activeTab", "storage"
+    "activeTab", "storage", "tabs"
   ],
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
 
   "content_scripts": [
     {
@@ -18,5 +24,10 @@
         "src/inject.js"
       ]
     }
-  ]
+  ],
+
+  "browser_action": {
+    "default_title": "No More Referrer",
+    "default_popup": "popup/popup.html"
+  }
 }
