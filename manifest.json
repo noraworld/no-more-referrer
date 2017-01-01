@@ -18,7 +18,7 @@
 
   "content_scripts": [
     {
-      "all_frames": true,
+      "all_frames": false,
       "matches": ["<all_urls>"],
       "js": [
         "src/inject.js"

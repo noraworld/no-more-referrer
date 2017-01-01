@@ -1,5 +1,3 @@
-var ref = [];
-
 (() => {
 
   'use strict';
@@ -40,11 +38,10 @@ var ref = [];
 //     sendResponse(ref);
 // });
 
-ref.push(document.referrer);
-console.log(ref);
+  chrome.runtime.sendMessage({referrer: document.referrer}, function(response) {});
 
-  chrome.runtime.sendMessage({time: document.referrer}, function(response) {
-    console.log(response);
-  });
+  // chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  //   sendResponse(document.referrer);
+  // });
 
 })();

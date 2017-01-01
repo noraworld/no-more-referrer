@@ -46,13 +46,16 @@
 //   });
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
-chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  chrome.tabs.sendMessage(tabs[0].id, {pop: "request from popup"}, function(response) {
-    referrer.textContent = response;
-    console.log(response);
+chrome.tabs.query({active: true, currentWindow: true}, function(tab) {
+  chrome.tabs.sendMessage(tab[0].id, {pop: "request from popup"}, function(response) {
+    if (chrome.extension.getBackgroundPage().referrer[tab[0].id] === "") {
+      referrer.textContent = "none";
+    }
+    else {
+      referrer.textContent = chrome.extension.getBackgroundPage().referrer[tab[0].id];
+    }
+    // console.log(chrome.extension.getBackgroundPage().referrer);
   });
-});
 });
 
 // referrer.textContent = new Date().toString();

@@ -1,13 +1,18 @@
-var referrer;
-if (document.referrer) {
-  referrer = 'ex'
-}
-else {
-  referrer = 'no';
-}
+var referrer = [];
 
-chrome.browserAction.setBadgeText({"text": referrer});
-// alert(document.referrer);
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  chrome.tabs.query({currentWindow: true, active: true}, function(tab) {
+    referrer[tab[0].id] = request.referrer;
+    console.log(tab[0].id);
+    sendResponse(referrer);
+    if (referrer[tab[0].id] === "") {
+      chrome.browserAction.setBadgeText({tabId: tab[0].id, text: "ON"});
+    }
+    else {
+      chrome.browserAction.setBadgeText({tabId: tab[0].id, text: "OFF"});
+    }
+  });
+});
 
 // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 //   chrome.tabs.sendMessage(tabs[0].id, {greeting: "hello"}, function(response) {
@@ -46,7 +51,3 @@ chrome.browserAction.setBadgeText({"text": referrer});
   //   var res = "finish";
   //   sendResponse(sender.pop);
   // });
-
-chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
-  sendResponse('ok');
-});
