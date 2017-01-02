@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>No More Referrer</title>
+  <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 <body>
 
@@ -10,15 +11,16 @@
     <h1>No More Referrer</h1>
   </header>
 
-  <h3>Add exclude URL</h3>
+  <h2>Add exclude URL</h2>
   <div class="add-exclude-url">
     <form class="exclude">
-      <input type="text" placeholder="Enter the URL to exclude" class="url">
-      <input type="button" value="Add" class="add">
+      <input type="text" placeholder="Enter the URL to disable extension" class="url">
+      <button type="submit" class="add">Add</button>
     </form>
+    <span class="desc">Example: www.google.com<br>You don't need to enter <strong>http://</strong> or <strong>https://</strong></span>
   </div>
 
-  <h3>Exclude URLs</h3>
+  <h2>Excluded URLs</h2>
   <table>
     <tbody class="exclude-url-list"></tbody>
   </table>
