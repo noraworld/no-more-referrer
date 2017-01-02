@@ -12,7 +12,12 @@
     $('.exclude').on('submit', function(event) {
       event.preventDefault();
       if ($(this).children('.url').val() === '') {
-        $(this).children('.url').css('border', '1px solid red');
+        if ($('.description').hasClass('has-error') === false) {
+          $(this).children('.url').css('border', '1px solid red');
+          $('.description').prepend('<div class="error-message"><strong>This field cannot be blank.</strong></div>');
+          $('.error-message').css('color', 'red').css('margin-bottom', '10px');
+          $('.description').addClass('has-error');
+        }
         return false;
       }
       add($(this).children('.url'));

@@ -59,7 +59,7 @@ td {
   margin-bottom: 10px;
 }
 
-.desc {
+.description {
+  width: 250px;
   /*margin-left: 15px;*/
-  font-size: 13px;
 }
