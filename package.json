@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/noraworld/no-more-referrer/issues"
   },
-  "homepage": "https://github.com/noraworld/no-more-referrer#readme"
+  "homepage": "https://github.com/noraworld/no-more-referrer#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^2.0.0"
+  }
 }

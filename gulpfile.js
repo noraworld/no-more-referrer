@@ -6,7 +6,7 @@ var babel        = require('gulp-babel');
 var uglify       = require('gulp-uglify');
 
 gulp.task('css', function() {
-  gulp.src('./popup/popup.css', './options.options.css')
+  gulp.src('./popup/*.css', './options/*.css')
       .pipe(plumber())
       .pipe(autoprefixer())
       .pipe(minifycss())
@@ -14,7 +14,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  gulp.src('./src/inject.js', './background/background.js', './popup/popup.js', './options/options.js')
+  gulp.src('./src/*.js', './background/*.js', './popup/*.js', './options/*.js')
       .pipe(plumber())
       .pipe(babel({
         presets: [['es2015', {
