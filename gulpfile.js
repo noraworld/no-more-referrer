@@ -6,7 +6,7 @@ var babel        = require('gulp-babel');
 var uglify       = require('gulp-uglify');
 
 gulp.task('css', function() {
-  gulp.src('./popup/*.css', './options/*.css')
+  gulp.src('./src/css/*.css')
       .pipe(plumber())
       .pipe(autoprefixer())
       .pipe(minifycss())
@@ -14,7 +14,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  gulp.src('./src/*.js', './background/*.js', './popup/*.js', './options/*.js')
+  gulp.src('./src/js/*.js')
       .pipe(plumber())
       .pipe(babel({
         presets: [['es2015', {
@@ -28,13 +28,19 @@ gulp.task('js', function() {
       .pipe(gulp.dest('.'))
 });
 
+gulp.task('lib', function() {
+  gulp.src('./src/lib/**')
+      .pipe(plumber())
+      .pipe(gulp.dest('.'));
+});
+
 gulp.task('watch', function() {
   gulp.watch([
-    './popup/*.css', './options/*.css',
-    './src/*.js', './background/*.js', './popup/*.js', './options/*.js'
+    './src/css/*.css',
+    './src/js/*.js'
   ], [
-    'css', 'js'
+    'css', 'js', 'lib'
   ]);
 });
 
-gulp.task('default', ['css', 'js', 'watch']);
+gulp.task('default', ['css', 'js', 'lib', 'watch']);
