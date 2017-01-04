@@ -44,8 +44,11 @@ button {
   padding: 0 10px;
   cursor: pointer;
 }
-button:active {
+button:hover {
   opacity: 0.9;
+}
+button:focus {
+  box-shadow: 0 0 5px 2px #5478e4;
 }
 
 table {
@@ -60,7 +63,7 @@ td {
 }
 
 .description {
-  width: 320px;
+  width: 420px;
   font-size: 13px;
   word-wrap: break-word;
   line-height: 1.6em;

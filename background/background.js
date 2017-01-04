@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       chrome.browserAction.setBadgeText({tabId: tab[0].id, text: "ON"});
     }
     else {
-      chrome.browserAction.setBadgeText({tabId: tab[0].id, text: "OFF"});
+      chrome.browserAction.setBadgeText({tabId: tab[0].id, text: ""});
     }
   });
 });
