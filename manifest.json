@@ -11,19 +11,19 @@
   ],
 
   "background": {
-    "scripts": ["background/background.js"]
+    "scripts": ["background.js"]
   },
 
   "content_scripts": [{
     "all_frames": false,
     "matches": ["<all_urls>"],
-    "js": ["src/inject.js"]
+    "js": ["inject.js"]
   }],
 
   "browser_action": {
     "default_title": "No More Referrer",
-    "default_popup": "popup/popup.html"
+    "default_popup": "popup.html"
   },
 
-  "options_page": "options/options.html"
+  "options_page": "options.html"
 }

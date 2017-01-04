@@ -34,13 +34,21 @@ gulp.task('lib', function() {
       .pipe(gulp.dest('.'));
 });
 
+gulp.task('html', function() {
+  gulp.src('./src/*.html')
+      .pipe(plumber())
+      .pipe(gulp.dest('.'));
+});
+
 gulp.task('watch', function() {
   gulp.watch([
     './src/css/*.css',
-    './src/js/*.js'
+    './src/js/*.js',
+    './src/lib/**',
+    './src/*.html'
   ], [
-    'css', 'js', 'lib'
+    'css', 'js', 'lib', 'html'
   ]);
 });
 
-gulp.task('default', ['css', 'js', 'lib', 'watch']);
+gulp.task('default', ['css', 'js', 'lib', 'html', 'watch']);
