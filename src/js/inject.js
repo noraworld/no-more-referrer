@@ -5,7 +5,7 @@
   chrome.storage.sync.get(function(storage) {
     let execFlag = true;
     for (var i = 0; i < storage.excludeURL.length; i++) {
-      if (parseURL(location.href).match(RegExp(parseURL('^' + storage.excludeURL[i] + '$')))) {
+      if (parseURL(location.href).match(RegExp(parseURL(storage.excludeURL[i])))) {
         execFlag = false;
       }
     }
