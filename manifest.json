@@ -1,7 +1,7 @@
 {
   "name": "No More Referrer",
   "short_name": "No Referrer",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "manifest_version": 2,
   "description": "No longer send referrer to any server",
   "homepage_url": "https://github.com/noraworld/no-more-referrer",
