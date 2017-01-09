@@ -22,7 +22,7 @@ $ npm install
 $ gulp
 ```
 
-Then, load this extension from [chrome://extensions](chrome://extensions)
+Then, load this extension from **chrome://extensions**.
 
 ## License
 All codes of this repository except library file are available under the MIT license. See the [LICENSE](https://github.com/noraworld/no-more-referrer/blob/master/LICENSE) for more information.
