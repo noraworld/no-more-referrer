@@ -8,7 +8,7 @@ No More Referrer is a Chrome Extension that disable referrer.
 See [CHANGELOG.md](https://github.com/noraworld/no-more-referrer/blob/master/CHANGELOG.md).
 
 ## Notice
-Some sites check referrer, and you may not see these sites correctly like [github.com/new](https://github.com/new). Add these sites as excluded URLs at options page to bypass any trouble.
+Some sites check referrer, and you may not see these sites correctly, e.g. [github.com/new](https://github.com/new). Add these sites as excluded URLs at options page to bypass any trouble.
 
 ## Usage for developers
 
