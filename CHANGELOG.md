@@ -4,3 +4,6 @@
 ### 0.1.1
 * Bug fixes
 * Add example about regular expression
+
+### 0.1.2
+* Bug fixes
