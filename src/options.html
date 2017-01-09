@@ -11,21 +11,54 @@
     <h1>No More Referrer</h1>
   </header>
 
-  <h2>Add exclude URL</h2>
+  <h2 class="add-exclude-url">Add exclude URL</h2>
   <div class="add-exclude-url">
     <form class="exclude">
       <input type="text" placeholder="Enter the URL to disable extension" class="url">
       <button type="submit" class="add">Add</button>
     </form>
-    <div class="description">
-      <span>Enter the host to disable this extension (enable referrer) like <strong>www.google.com</strong>. Setting that value, Chrome will send referrer from <strong>www.google.com</strong>. You don't need to enter <strong>http://</strong> or <strong>https://</strong>. <strong>NOTICE:</strong> Some sites check referrer, and you may not see these sites correctly like <strong>github.com/new</strong>. Add these sites as excluded URLs to bypass any trouble. You can use regular expression. For example, add <strong>www.google.com/*</strong> to match all URLs of <strong>www.google.com</strong>.</span>
-    </div>
   </div>
 
-  <h2>Excluded URLs</h2>
+  <h2 class="excluded-urls">Excluded URLs</h2>
   <table>
     <tbody class="exclude-url-list"></tbody>
   </table>
+
+  <h2 class="information">Information</h2>
+  <div class="description">
+    <p>Enter the URL to disable this extension (enable referrer) like <strong>^www.google.com$</strong>. Setting that value, Chrome will send referrer from <strong>www.google.com</strong>.</p>
+
+    <p><strong>NOTICE:</strong> Some sites check referrer, and you may not see these sites correctly, e.g. <strong>github.com/new</strong>. Add these sites as excluded URLs to bypass troubles.</p>
+
+    <p>You need to set the URL as regular expression. Here is the example of <strong>google.com</strong>.</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>perfect matches</td>
+          <td><strong>www.google.com/foo</strong></td>
+          <td><strong>^www.google.com/foo$</strong></td>
+        </tr>
+        <tr>
+          <td>matches any path</td>
+          <td><strong>www.google.com</strong><br><strong>www.google.com</strong>/foo<br><strong>www.google.com</strong>/foo/bar</td>
+          <td><strong>^www.google.com/*</strong></td>
+        </tr>
+        <tr>
+          <td>matches any host</td>
+          <td><strong>google.com</strong><br>www.<strong>google.com</strong><br>drive.<strong>google.com</strong></td>
+          <td><strong>google.com$</strong></td>
+        </tr>
+        <tr>
+          <td>matches any path and host</td>
+          <td><strong>google.com</strong><br><strong>google.com</strong>/foo</strong><br>www.<strong>google.com</strong><br>drive.<strong>google.com</strong>/foo/bar</td>
+          <td><strong>google.com/*</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>You don't need to mind http(s), a trailing slash, and escaping regular expression special characters.</p>
+  </div>
 
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="options.js"></script>
