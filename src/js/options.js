@@ -34,7 +34,13 @@
 
   function load() {
     chrome.storage.sync.get(function(storage) {
-      excludeURL = storage.excludeURL;
+      if (storage.excludeURL === undefined) {
+        // create chrome storage variable: excludeURL
+        save();
+      }
+      else {
+        excludeURL = storage.excludeURL;
+      }
       for (var i = 0; i < excludeURL.length; i++) {
         $('.exclude-url-list').append('<tr><td class="index">' + (i + 1) + '</td><td class="value">' + excludeURL[i] + '</td><td class="delete"><button type="button">Delete</button></td></tr>');
       }
