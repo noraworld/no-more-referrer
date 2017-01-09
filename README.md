@@ -2,7 +2,7 @@
 No More Referrer is a Chrome Extension that disable referrer.
 
 ## Download
-(write after release this extension...)
+[No More Referrer - Chrome Web Store](https://chrome.google.com/webstore/detail/no-more-referrer/pnieocdcmbkplilpaihcajgeglmggego)
 
 ## Change Log
 See [CHANGELOG.md](https://github.com/noraworld/no-more-referrer/blob/master/CHANGELOG.md).
